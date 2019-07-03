@@ -1,29 +1,27 @@
-# Create React Express App
+# Project divided into 4 sections
 
-## About This Boilerplate
+- First Delivery --> 07/09
+- Second --> 07/16
+- Third --> 07/23
+- Fourth --> 07/30 (Final Day of Class)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+# First Delivery
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+- An overview of the intended application and WHY you feel it's valuable.
+- A breakdown of roles by group member.
+  - Bryton:: React Routing / Component Structure /
+  - Kellin:: Create Components & styling /
+  - Joffrey:: Authentication / Database Management /
+- A schedule for completion of various tasks.
+- A screen-shot of your Project Management Board that shows breakdown of tasks assigned to group members with a schedule.
+- A set of DETAILED screen-by-screen design layouts with annotations describing all UI/UX components and all data relevant to the screen.
+  - On this note, show the example slides of a UI/UX and Data Flow layout. Tell the class that you'll expect something akin to these drafts.
 
-```
-npm install
-```
 
-This should install node modules within the server and the client folder.
 
-After both installations complete, run the following command in your terminal:
+# Second Delivery
 
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+- TBA
+  - Present MVP
