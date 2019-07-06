@@ -1,8 +1,20 @@
 import React, { Component } from "react";
+import queryString from "query-string";
 import logo from "./logo.svg";
 import "./App.css";
 
-class App extends Component {
+
+
+// componentDidMount() {
+//     var query = queryString.parse(this.props.location.search);
+//     if (query.token) {
+//       window.localStorage.setItem("jwt", query.token);
+//       this.props.history.push("/");
+//    }
+//   };
+
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
