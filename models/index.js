@@ -1,4 +1,4 @@
 module.exports = {
-    Store: require("./store")
+    Strain: require("./strain")
   };
   
