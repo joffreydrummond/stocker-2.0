@@ -1,0 +1,24 @@
+.dash {
+  margin-top: 10%;
+}
+
+.dashHead {
+  background-color: black;
+  text-align: left;
+  color: white;
+  padding: 5px;
+  width: 500px;
+}
+
+.dashNote {
+  background-color: lightgrey;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.dashNote:hover {
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+}
