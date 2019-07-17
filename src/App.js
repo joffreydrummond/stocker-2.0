@@ -1,9 +1,12 @@
 import React from "react";
+
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home/index";
 import Search from "./components/Search/index";
 import Login from "./components/Login/index";
+import NavBar from "./components/Navbar";
+>>>>>>> deployment
 
 function App() {
   return (
