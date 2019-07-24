@@ -3,22 +3,19 @@ import DashNote from "./DashNote";
 
 function Dash () {
   return (
-    <div className="row">
-    <div className="col-1"></div>
-    <table className="dash col-10">
-    <div className="row">
-      <th className="dashHead col-12">Notifications:</th>
-    </div>
-      <DashNote />
-      <DashNote /> 
-      <DashNote /> 
-      <DashNote /> 
-  
-    </table>
-    <div className="col-1"></div>
+    <div className="dash">
+
+      <div className="list-group">
+
+        <div className="list-group-item list-group-item-action bg-dark text-white">Stocked Items</div>
+
+        <DashNote/>
+
+      </div>
+
     </div>
     
   );
-};
+}
 
 export default Dash;

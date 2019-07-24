@@ -1,13 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function dashNote () {
+
   return (
-    <div className="row">
-      <a className="dashNote col-12" href="#">
-        <tr>
-          <td>Your item is now in stock!</td>
-        </tr>
-      </a>
+    <div className="dashNote">
+      <Link to="/details/" className="list-group-item list-group-item-action">Your Item is in stock</Link>
     </div>
   );
 };
