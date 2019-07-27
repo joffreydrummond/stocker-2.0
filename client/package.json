@@ -2,6 +2,7 @@
   "name": "stocker-3",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.0.2",
     "auth0-js": "^9.11.1",
