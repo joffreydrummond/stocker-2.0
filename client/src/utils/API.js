@@ -4,8 +4,19 @@ export default {
 
     getStrains: function () {
         return axios.get("/api/strains")
+        
     },
-    getStrain: function(id) {
-        return axios.get("/api/strains/" + id);
-      },
-};
+
+    searchStrains: function () {
+        return axios.get("/api/strains")
+        .then(({ data }) => {
+            this.setState({
+                results: data.name
+            })
+        })
+    },
+
+
+
+
+   }

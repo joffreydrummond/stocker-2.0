@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home/index";
 import Search from "./components/Search/index";
-import Login from "./components/Login/index";
+import Navbar from "./components/Navbar/index";
 import Details from "./components/Details/index";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             </ul>
           </nav>
 
-        <Route path="/" exact component={Login} />
+        <Route path="/" exact component={Navbar} />
         <Route path="/home/" component={Home} />
         <Route path="/search/" component={Search} />
         <Route path={"/details/"} component={Details} />

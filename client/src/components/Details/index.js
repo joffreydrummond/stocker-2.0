@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function Details() {
 
@@ -31,10 +32,12 @@ function Details() {
             </p>
 
             <form>
-                <input className="btn btn-dark" type={"button"} value={"Stock This"} />
+                <input className="btn btn-primary" type={"button"} value={"Stock This"} />
                 <br />
-                <br />
-                <input className="btn btn-dark" type={"button"} value={"Go back!"} />
+            <br />
+            <Link to="/home/">
+              <input className="btn btn-dark" type={"button"} value={"Go back!"} />
+              </Link>
             </form>
 
         </div>
