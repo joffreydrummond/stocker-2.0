@@ -7,7 +7,7 @@ router
   // .post(strainsController.create);
 
 // router
-//   .route("/:id")
+//   .route("/:_id")
 //   .get(strainsController.findById);
 
 module.exports = router;

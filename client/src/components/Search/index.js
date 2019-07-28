@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
-import Input from "./Input";
+import Search from "./Search";
 
-function Search () {
+function SearchBox () {
   return (
-    <Input />
+    <Search />
   );
 };
 
-export default Search;
+export default SearchBox;
