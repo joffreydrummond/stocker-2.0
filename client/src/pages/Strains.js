@@ -9,8 +9,6 @@ class Strains extends Component {
     };
 
     componentDidMount() {
-        console.log("Did this work. Bryton is smart");
-        
         this.loadStrains();
     }
 

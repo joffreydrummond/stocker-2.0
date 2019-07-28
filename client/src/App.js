@@ -5,25 +5,14 @@ import Home from "./components/Home/index";
 import Search from "./components/Search/index";
 import Login from "./components/Login/index";
 import Details from "./components/Details/index";
-import Strains from "./pages/Strains";
-//import Background from "./img/banner.jpg";
-
-// var JumboStyle = {
-//   backgroundImage: `url(${Background})`,
-//   color: 'white',
-//   margin: '0',
-//   //'background-size': '100% 100%',
-// };
 
 function App() {
 
-
-  
   return (
     <div className="App">
- <Strains/>
+
       <Router>
-          <nav className="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <a className="navbar-brand" href={"/"}> Stocker </a>
             <ul className="navbar-nav">
 
