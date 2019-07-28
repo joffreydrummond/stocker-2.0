@@ -2,13 +2,14 @@ const express = require("express"),
   mongoose = require("mongoose"),
   routes = require("./routes"),
   app = express(),
+  helmet = require('helmet');
   PORT = process.env.PORT || 3001;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.use(helmet());
 app.use(routes);
 // app.use("/", otherRoutes);
 
