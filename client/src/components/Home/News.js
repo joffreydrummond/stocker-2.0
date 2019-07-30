@@ -1,5 +1,5 @@
 import React from "react";
-import NewsNote from "./NewsNote";
+import NewsNote from "./NewsNote/index";
 
 function News () {
   return (

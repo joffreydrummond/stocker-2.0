@@ -1,21 +1,22 @@
 import React from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-
+import DashNote from "./DashNote/index";
+import Module from "../Details/Module";
+import firebase from 'firebase';
 
 class Dash extends React.Component {
   state = {
     strains: []
   };
 
-  componentDidMount() {
-    this.loadStrains();
-  };
-
   loadStrains = () => {
     API.getStrains()
       .then( res => this.setState({ strains: res.data }))
       .catch(err => console.log(err));
+  };
+
+  componentDidMount() {
+    this.loadStrains();
   };
 
   render() {
@@ -30,9 +31,23 @@ class Dash extends React.Component {
           {this.state.strains.length ? (
                             <div>
                                 {this.state.strains.map(strain => (
-                                  <Link key={strain._id} to="/details/" className="list-group-item list-group-item-action dashNote">    
-                                    {strain.name}
-                                  </Link>
+                                  <div className="strainItem">
+
+                                  <DashNote 
+                                  id={strain._id} 
+                                  name={strain.name} 
+                                  inStock={strain.inStock}
+                                  />   
+
+                                  <Module
+                                  id={strain._id}
+                                  name={strain.name} 
+                                  info={strain.information}
+                                  inStock={strain.inStock}
+                                  date={strain.date}
+                                  /> 
+                                  </div>
+                     
                                 ))}
                             </div>
                         ) : (
