@@ -1,8 +1,19 @@
 import React from "react";
-import API from "../../utils/API";
 import DashNote from "./DashNote/index";
 import Module from "../Details/Module";
 import firebase from 'firebase';
+
+var config = {
+  apiKey: "AIzaSyAX_gZ6crVt0L-IWe1ijWhTdt2IrLk0-OQ",
+  authDomain: "projectId.firebaseapp.com",
+  databaseURL: "https://stocker-71d5a.firebaseio.com",
+  projectId: "stocker-71d5a",
+  storageBucket: '',
+};
+firebase.initializeApp(config);
+
+const database = firebase.database();
+const ref = database.ref('strains');
 
 class Dash extends React.Component {
   state = {
@@ -10,10 +21,11 @@ class Dash extends React.Component {
   };
 
   loadStrains = () => {
-    API.getStrains()
-      .then( res => this.setState({ strains: res.data }))
+    ref.once('value')
+      .then(res => this.setState({strains: res.val()}))
+      //.then(res => console.log(res.val()))
       .catch(err => console.log(err));
-  };
+}
 
   componentDidMount() {
     this.loadStrains();
@@ -34,16 +46,16 @@ class Dash extends React.Component {
                                   <div className="strainItem">
 
                                   <DashNote 
-                                  id={strain._id} 
+                                  id={strain.id} 
                                   name={strain.name} 
-                                  inStock={strain.inStock}
+                                  instock={strain.inStock}
                                   />   
 
                                   <Module
-                                  id={strain._id}
+                                  id={strain.id}
                                   name={strain.name} 
                                   info={strain.information}
-                                  inStock={strain.inStock}
+                                  instock={strain.inStock}
                                   date={strain.date}
                                   /> 
                                   </div>
