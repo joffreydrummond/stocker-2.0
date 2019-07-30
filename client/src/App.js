@@ -1,39 +1,50 @@
-import React from "react";
-import "./App.css";
+import React, {Component} from "react";
+import Toolbar from "./components/Toolbar/Toolbar";
+import Backdrop from "./components/Backdrop/Backdrop";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Home from "./components/Home/index";
-import Search from "./components/Search/index";
-import Navbar from "./components/Navbar/index";
-import Details from "./components/Details/index";
 
-function App() {
+import SideNav from "./components/SideNavigation/SideNavigation";
+// import Search from "./components/Search/index";
+// import Navbar from "./components/Navbar/index";
+// import Details from "./components/Details/index";
 
-  return (
-    <div className="App">
+class App extends Component {
+  state = {
+    sideNavOpen: false
+  }
 
-      <Router>
-          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a className="navbar-brand" href={"/"}> Stocker </a>
-            <ul className="navbar-nav">
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+  return {sideNavOpen: !prevState.sideNavOpen}
+})
+  };
 
-              <li className="nav-item">
-                <Link to="/home/" className="nav-link"><i className="fas fa-home" /></Link>
-              </li>
+  backdropClickHandler = () => {
+    this.setState({sideNavOpen: false})
+  }
+  
 
-              <li className="nav-item">
-                <Link to="/search/" className="nav-link"><i className="fas fa-search" /></Link>
-              </li>
+  render() {
+    let sideNav;
+    let backdrop;
 
-            </ul>
-          </nav>
+    if (this.state.sideNavOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+    return (
+      <div style={{height:"100%"}} >
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideNav show={this.state.sideNavOpen} />
+        {backdrop}
 
-        <Route path="/" exact component={Navbar} />
-        <Route path="/home/" component={Home} />
-        <Route path="/search/" component={Search} />
-        <Route path={"/details/"} component={Details} />
-      </Router>
-    </div>
-  );
+        <main style={{marginTop:"64px"}}>
+          {/* <Router>
+            <Home />
+            </Router> */}
+          <h2 align="center" >Login. Begin Stocking</h2>
+        </main>
+      </div >
+    )
+  }
 }
-
 export default App;
