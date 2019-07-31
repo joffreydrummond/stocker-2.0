@@ -1,17 +1,19 @@
 import React from "react";
 import DashNote from "./DashNote/index";
 import Module from "../Details/Module";
-import firebase from 'firebase';
+import firebase from '../../firebase';
 
-var config = {
-  apiKey: "AIzaSyAX_gZ6crVt0L-IWe1ijWhTdt2IrLk0-OQ",
-  authDomain: "projectId.firebaseapp.com",
-  databaseURL: "https://stocker-71d5a.firebaseio.com",
-  projectId: "stocker-71d5a",
-  storageBucket: '',
-};
-firebase.initializeApp(config);
+// const config = {
+//   apiKey: "AIzaSyAX_gZ6crVt0L-IWe1ijWhTdt2IrLk0-OQ",
+//   authDomain: "stocker-71d5a.firebaseapp.com",
+//   databaseURL: "https://stocker-71d5a.firebaseio.com",
+//   projectId: "stocker-71d5a",
+//   storageBucket: "",
+//   messagingSenderId: "888784073703",
+//   appId: "1:888784073703:web:f6ff3b9c95771fed"
+// };
 
+// firebase.initializeApp(config);
 const database = firebase.database();
 const ref = database.ref('strains');
 
@@ -49,6 +51,7 @@ class Dash extends React.Component {
                                   id={strain.id} 
                                   name={strain.name} 
                                   instock={strain.inStock}
+                                  stocking={strain.isStocked}
                                   />   
 
                                   <Module
@@ -57,6 +60,8 @@ class Dash extends React.Component {
                                   info={strain.information}
                                   instock={strain.inStock}
                                   date={strain.date}
+                                  stocking={strain.isStocked}
+                                  img={strain.imgUrl}
                                   /> 
                                   </div>
                      

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "stocker-71d5a"
+    "default": "stocker-71d5a",
+    "client": "stocker-71d5a"
   }
 }
